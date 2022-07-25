@@ -1,38 +1,50 @@
 {
-  "name": "my-culc",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "my-culc",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+		"@syncedstore/core": "latest",
+		"@syncedstore/react": "latest",
+		"@syncedstore/svelte": "latest",
+		"@tiptap/extension-collaboration": "latest",
+		"@tiptap/extension-collaboration-cursor": "latest",
+		"@tiptap/extension-placeholder": "latest",
+		"@tiptap/react": "latest",
+		"@tiptap/starter-kit": "latest",
+		"bootstrap": "^5.2.0",
+		"mobx": "latest",
+		"mobx-react-lite": "latest",
+		"react": "^17.0.0",
+		"react-dom": "^17.0.0",
+		"react-inspector": "latest",
+		"react-scripts": "^4.0.0",
+		"svelte": "^3.32.3",
+		"y-webrtc": "latest",
+		"yjs": "latest"
+	},
+	"scripts": {
+		"start": "react-scripts --openssl-legacy-provider start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	}
 }
