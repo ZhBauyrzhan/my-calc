@@ -20,6 +20,7 @@
 		"react-inspector": "latest",
 		"react-scripts": "^4.0.0",
 		"svelte": "^3.32.3",
+		"uuid": "^8.3.2",
 		"y-webrtc": "latest",
 		"yjs": "latest"
 	},
