@@ -6,6 +6,7 @@ import { useSyncedStore } from '@syncedstore/react';
 import { store } from './store';
 export const App = () => {
 	const state = useSyncedStore(store);
+	// console.log(state);
 	return (
 		<div className="App d-flex flex-column">
 			<div className="interaction d-flex flex-grow-1 flex-col">

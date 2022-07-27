@@ -15,4 +15,7 @@
 .connection {
 	height: 10vh;
 }
+.ans-li {
+	margin-bottom: 16px;
+}
 /* TODO изменить цветавую схему */

@@ -8,6 +8,25 @@ export const Answers = ({ state }) => {
 			{
 				// TODO вывод моих ответов
 			}
+			<ul>
+				{state.calculations.map((calculation, i) => {
+					try {
+						let ans = eval(calculation);
+
+						return (
+							<li className="ans-li" key={i}>
+								{ans}
+							</li>
+						);
+					} catch (err) {
+						return (
+							<li className="ans-li" key={i}>
+								Not function
+							</li>
+						);
+					}
+				})}
+			</ul>
 		</div>
 	);
 };

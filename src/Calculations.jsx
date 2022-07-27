@@ -2,6 +2,8 @@
  * Тут есть Editor tiptap и Menu
  * В menu можете включить или выключить нумерацию строк
  * туда пишем свои вычесления
+ * только там можно удалять с стора
+ * state.calculations.splice(0, state.calculations.length);
  */
 
 import { useEditor, EditorContent } from '@tiptap/react';
@@ -10,9 +12,7 @@ import Placeholder from '@tiptap/extension-placeholder';
 import Collaboration from '@tiptap/extension-collaboration';
 import CollaborationCursor from '@tiptap/extension-collaboration-cursor';
 import { webrtcProvider } from './store';
-import { MenuBar } from './MenuBar';
-import { SyncedText } from '@syncedstore/core';
-
+// import { MenuBar } from './MenuBar';
 export const Calculations = ({ state }) => {
 	//Каждому юзеру выдают рандомный цвет из массива
 	const colors = [
@@ -41,7 +41,7 @@ export const Calculations = ({ state }) => {
 	const getRandomColor = () => getRandomElement(colors);
 	const getRandomName = () => getRandomElement(names);
 	// Создаю tiptap editor
-	let col = 1;
+	// let col = 1;
 	const editor = useEditor({
 		extensions: [
 			StarterKit, // Обычные дополнения текста
@@ -59,15 +59,15 @@ export const Calculations = ({ state }) => {
 		],
 		content: 'Here I am', //TODO написать инструкцию,
 		onUpdate: ({ editor }) => {
-			state.calculations.push(col);
+			//state.calculations.push(col);
 			// console.log(col++);
 			// state.calculations.map((calculation) => {
 			// 	console.log(calculation);
 			// });
 			const json = editor.getJSON();
-			const changedCalculations = [];
 			// console.log('state', state.calculations);
-			console.log(state.calculations[0]);
+			// console.log();
+			state.calculations.splice(0, state.calculations.length);
 			for (let i = 0; i < json.content.length; i++) {
 				if (
 					json.content.length > 1 &&
@@ -79,15 +79,18 @@ export const Calculations = ({ state }) => {
 					json.content[i].content[0] !== undefined &&
 					json.content[i].content[0] !== null
 				) {
-					state.calculations.push(
-						new SyncedText(json.content[i].content[0].text)
-					);
-					changedCalculations.push(
-						new SyncedText(json.content[i].content[0].text)
-					);
-				}
+					// let f = new SyncedText(json.content[i].content[0].text);
+					// console.log('tyt f', f);
+					state.calculations.push(json.content[i].content[0].text);
+					// console.log(f);
+				} else state.calculations.push('');
+
 				// changedCalculations.push(json.content[i].content[0].text);
 			}
+			// state.calculations = [
+			// 	...state.calculations,
+			// 	...changedCalculations,
+			// ];
 			// console.log(changedCalculations);
 			// state.calculations = changedCalculations;
 			// console.log(json.content[1]); // TODO писать ответы при изменении
@@ -114,8 +117,13 @@ export const Calculations = ({ state }) => {
 			<div className="header d-flex justify-content-center">
 				<h2>Calculations</h2>
 			</div>
-			<MenuBar editor={editor} />
+			{/* <MenuBar editor={editor} /> */}
 			<EditorContent editor={editor} />
+			{/* <ul>
+				{state.calculations.map((calculation, i) => {
+					return <li key={i}> {calculation} </li>;
+				})}
+			</ul> */}
 		</div>
 	);
 };
