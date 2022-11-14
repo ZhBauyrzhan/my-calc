@@ -17,13 +17,7 @@ export const Calculations = ({ state }) => {
 	//Каждому юзеру выдают рандомный цвет из массива
 	const colors = [
 		//TODO добавить цвета
-		'#958DF1',
-		'#F98181',
-		'#FBBC88',
-		'#FAF594',
-		'#70CFF8',
-		'#94FADB',
-		'#B9F18D',
+		'#000000',
 	];
 	//Каждому юзеру даю прикольное имя
 	const names = [
@@ -46,7 +40,7 @@ export const Calculations = ({ state }) => {
 		extensions: [
 			StarterKit, // Обычные дополнения текста
 			Placeholder.configure({
-				placeholder: 'Write something …',
+				placeholder: 'Write something...',
 			}),
 			Collaboration.configure({
 				fragment: state.fragment,
@@ -57,7 +51,7 @@ export const Calculations = ({ state }) => {
 				user: { name: getRandomName(), color: getRandomColor() },
 			}),
 		],
-		content: 'Here I am', //TODO написать инструкцию,
+		content: 'Write something...', //TODO написать инструкцию,
 		onUpdate: ({ editor }) => {
 			//state.calculations.push(col);
 			// console.log(col++);
@@ -67,6 +61,7 @@ export const Calculations = ({ state }) => {
 			const json = editor.getJSON();
 			// console.log('state', state.calculations);
 			// console.log();
+			
 			state.calculations.splice(0, state.calculations.length);
 			for (let i = 0; i < json.content.length; i++) {
 				if (

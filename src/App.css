@@ -3,13 +3,16 @@
 	height: 100%;
 	padding: 0%;
 	margin: 0%;
-	background-color: blueviolet;
+	color: wheat;
+	background-color: #12141c;
 }
 .calculations {
-	background-color: aquamarine;
+	color: wheat;
+	background-color: #12141c;
 }
 .answers {
-	background-color: blue;
+	color: wheat;
+	background-color: #12141c;
 	width: 400px;
 }
 .connection {
